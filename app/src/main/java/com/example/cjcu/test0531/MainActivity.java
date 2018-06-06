@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void mylist() {
         list = findViewById(R.id.list);
-        helper = new MyDBHelper(this,"my.db",null,1);
+        helper = MyDBHelper.getInstance(this);
         Cursor c = helper.getReadableDatabase()
                 .query("exp",null,null,null,null,null,null);
         SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(this,
